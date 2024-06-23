@@ -21,6 +21,6 @@ if (name && email && phone) {
         window.alert ("Please fill in all fields");
     }
 
- 
+} 
 document.getElementById("submit").addEventListener("click", verifyForm); 
-}
+
