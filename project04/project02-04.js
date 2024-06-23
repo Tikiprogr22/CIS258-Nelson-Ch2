@@ -16,13 +16,19 @@
  const SALAD_PRICE = 7.95;
  const SALES_TAX = 0.07;
 
- // Function to displays numeric value as a text string in currency format
- function formatCurrency(value) {
-    return "$" + value.toFixed(2);
- }
-
  // Function to calculate the total cost
  function calcTotal() {
+// Adding event listeners to the checkboxes to recalculate the total cost when any checkbox is clicked
+document.getElementById("chicken").
+addEventListener("click", calcTotal);
+document.getElementById("halibut").
+addEventListener("click", calcTotal);
+document.getElementById("burger").
+addEventListener("click", calcTotal);
+document.getElementById("salmon").
+addEventListener("click", calcTotal);
+document.getElementById("salad").
+addEventListener("click", calcTotal);
 
 // Declare the cost variable with an initial value of 0
     let cost = 0;
@@ -59,15 +65,8 @@ document.getElementById("foodTax").innerHTML = formatCurrency(tax);
 // Set the innerHTML property for the element with the id "totalBill" to the value returned by formatCurrency(totalCost) 
 document.getElementById("totalBill").innerHTML = formatCurrency("totalCost"); 
 }
-
-// Adding event listeners to the checkboxes to recalculate the total cost when any checkbox is clicked
-document.getElementById("chicken").
-addEventListener("click", calcTotal);
-document.getElementById("halibut").
-addEventListener("click", calcTotal);
-document.getElementById("burger").
-addEventListener("click", calcTotal);
-document.getElementById("salmon").
-addEventListener("click", calcTotal);
-document.getElementById("salad").
-addEventListener("click", calcTotal);
+ // Function to displays numeric value as a text string in currency format
+ function formatCurrency(value) {
+    return "$" + value.toFixed(2);
+ }
+}
